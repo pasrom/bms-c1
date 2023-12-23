@@ -1621,7 +1621,7 @@
     (property "PartNumber" "CL10A105KA8NNNC" (at 48.26 68.58 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Remarks" "min. 10V, X5R" (at 48.26 68.58 0)
+    (property "Remarks" "min. 25V, X5R" (at 48.26 68.58 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid 5863590b-98aa-43af-b3b4-415354c5a475))

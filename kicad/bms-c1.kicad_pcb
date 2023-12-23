@@ -9768,7 +9768,7 @@
     (property "LCSC" "C5673")
     (property "Manufacturer" "Samsung Electro-Mechanics")
     (property "PartNumber" "CL10A105KA8NNNC")
-    (property "Remarks" "min. 10V, X5R")
+    (property "Remarks" "min. 25V, X5R")
     (property "Sheetfile" "esp32-c3.kicad_sch")
     (property "Sheetname" "ESP32-C3 MCU")
     (property "ki_description" "Unpolarized capacitor")
