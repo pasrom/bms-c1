@@ -5346,7 +5346,7 @@
     (descr "Waste Electrical and Electronic Equipment Directive")
     (tags "Logo WEEE")
     (attr exclude_from_pos_files exclude_from_bom)
-    (fp_text reference "REF**" (at 0 0) (layer "F.SilkS") hide
+    (fp_text reference "LOGO3" (at 0 0) (layer "F.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)))
       (tstamp 902bb90f-3fdd-47a5-9909-a35159ff4b7b)
     )
