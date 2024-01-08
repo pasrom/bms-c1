@@ -1,0 +1,63 @@
+name: Comment with PDF
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, edited]
+
+jobs:
+  comment:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          # So we can run a diff between changes
+          fetch-depth: '0'
+
+      # Update the diff.kibot.yaml file to diff against the correct base branch of the pull request
+      - name: Update base branch in diff.kibot.yaml
+        run: |
+          sed -i "s/HEAD~/${{ github.event.pull_request.base.sha }}/g" kicad/diff.kibot.yaml
+
+      - name: Run KiBot
+        uses: INTI-CMNB/KiBot@v2_k7
+        with:
+          config: kicad/diff.kibot.yaml
+          # optional - prefix to output defined in config
+          dir: output
+          # optional - schematic file
+          schema: 'kicad/bms-c1.kicad_sch'
+          # optional - PCB design file
+          board: 'kicad/bms-c1.kicad_pcb'
+
+      - name: Upload pcb
+        uses: actions/upload-artifact@v4
+        id: artifact-upload-step-pcb
+        with:
+          name: bms-c1-diff_pcb.pdf.pdf
+          path: output/diff/bms-c1-diff_pcb.pdf
+
+      - name: Upload schematic
+        uses: actions/upload-artifact@v4
+        id: artifact-upload-step-sch
+        with:
+          name: bms-c1-diff_sch.pdf
+          path: output/diff/bms-c1-diff_sch.pdf
+
+      - name: Find Comment
+        uses: peter-evans/find-comment@v2
+        id: fc
+        with:
+          issue-number: ${{ github.event.pull_request.number }}
+          comment-author: 'github-actions[bot]'
+          body-includes: 'PDF diff:'
+
+      - name: Create or update comment
+        uses: peter-evans/create-or-update-comment@v3
+        with:
+          comment-id: ${{ steps.fc.outputs.comment-id }}
+          issue-number: ${{ github.event.pull_request.number }}
+          body: |
+            PDF diff: [bms-c1-diff_sch.pdf](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}/artifacts/${{ steps.artifact-upload-step-sch.outputs.artifact-id }})
+            PDF diff: [bms-c1-diff_pcb.pdf](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}/artifacts/${{ steps.artifact-upload-step-pcb.outputs.artifact-id }})
+          edit-mode: replace
