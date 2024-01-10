@@ -4099,7 +4099,7 @@
     (effects (font (size 2.54 2.54)) (justify left bottom))
     (uuid b264e696-3663-4fe7-9f76-913fca883f47)
   )
-  (text "Internal I2C" (at 30.48 53.34 0)
+  (text "Internal I2C TEST diff" (at 30.48 53.34 0)
     (effects (font (size 2.54 2.54)) (justify left bottom))
     (uuid c3773d66-2e53-47ab-bd55-17942853d565)
   )
