@@ -6261,7 +6261,7 @@
     (stroke (width 0.1524) (type solid))
     (fill (color 0 0 0 0.0000))
     (uuid 1a7f6efa-ef60-433d-acc0-6f9a9126bc57)
-    (property "Sheetname" "Power Part" (at 91.44 42.4684 0)
+    (property "Sheetname" "Power Part (added something)" (at 91.44 42.4684 0)
       (effects (font (size 2.54 2.54)) (justify left bottom))
     )
     (property "Sheetfile" "power-part.kicad_sch" (at 91.44 85.6746 0)

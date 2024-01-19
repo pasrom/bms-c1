@@ -1,4 +1,4 @@
-name: Run KiBot Checks
+name: Run KiBot Checks test
 
 on:
   push:
