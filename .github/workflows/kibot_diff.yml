@@ -24,6 +24,7 @@ jobs:
           schema: 'kicad/bms-c1.kicad_sch'
           # optional - PCB design file
           board: 'kicad/bms-c1.kicad_pcb'
+          verbose: 3
 
       - name: Upload pcb
         uses: actions/upload-artifact@v4
