@@ -8,7 +8,7 @@ outputs:
   dir: diff
   layers: all
   options:
-    old: main
+    old: HEAD~
     old_type: git
     new: HEAD
     new_type: git
@@ -20,7 +20,7 @@ outputs:
   type: diff
   dir: diff
   options:
-    old: main
+    old: HEAD~
     old_type: git
     new: HEAD
     new_type: git
