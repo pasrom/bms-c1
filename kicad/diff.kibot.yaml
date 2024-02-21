@@ -8,11 +8,11 @@ outputs:
   dir: diff
   layers: all
   options:
-    old: HEAD~
+    old: origin/main
     old_type: git
     new: HEAD
     new_type: git
-    add_link_id: true
+    add_link_id: false
     pcb: true
     only_different: true
 - name: basic_diff_sch
@@ -20,10 +20,10 @@ outputs:
   type: diff
   dir: diff
   options:
-    old: HEAD~
+    old: origin/main
     old_type: git
     new: HEAD
     new_type: git
-    add_link_id: true
+    add_link_id: false
     pcb: false
     only_different: true

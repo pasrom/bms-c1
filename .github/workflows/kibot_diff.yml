@@ -14,11 +14,6 @@ jobs:
           # So we can run a diff between changes
           fetch-depth: '0'
 
-      # Update the diff.kibot.yaml file to diff against the correct base branch of the pull request
-      - name: Update base branch in diff.kibot.yaml
-        run: |
-          sed -i "s/HEAD~/${{ github.event.pull_request.base.sha }}/g" kicad/diff.kibot.yaml
-
       - name: Run KiBot
         uses: INTI-CMNB/KiBot@v2_k7
         with:
