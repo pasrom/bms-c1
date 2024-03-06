@@ -12,7 +12,7 @@ outputs:
     old_type: git
     new: HEAD
     new_type: git
-    add_link_id: false
+    add_link_id: true
     pcb: true
     only_different: true
 - name: basic_diff_sch
@@ -24,6 +24,6 @@ outputs:
     old_type: git
     new: HEAD
     new_type: git
-    add_link_id: false
+    add_link_id: true
     pcb: false
     only_different: true
